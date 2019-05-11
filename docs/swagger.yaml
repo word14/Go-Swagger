@@ -1,0 +1,50 @@
+basePath: /
+definitions:
+  model.ProductSuperCategory:
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      slug:
+        type: string
+    type: object
+host: localhost:3000
+info:
+  contact:
+    email: yusufpangaribuan31@gmail.com
+    name: Yusuf PM Pangaribuan
+  description: This is Test Gin Restful Api.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Test Gin Restful Api
+  version: "1.0"
+paths:
+  /test:
+    post:
+      consumes:
+      - application/json
+      description: Get Product Super Category
+      parameters:
+      - description: Request Body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/model.ProductSuperCategory'
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Success
+          schema:
+            items:
+              $ref: '#/definitions/model.ProductSuperCategory'
+            type: array
+      summary: Get Product Super Category
+      tags:
+      - ProductSuperCategory
+swagger: "2.0"
