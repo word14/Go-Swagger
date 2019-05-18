@@ -18,8 +18,8 @@ var doc = `{
         "title": "Test Gin Restful Api",
         "termsOfService": "http://swagger.io/terms/",
         "contact": {
-            "name": "Samuel Sonny Salim",
-            "email": "samuel.sonny.salim@gmail.com"
+            "name": "Yusuf PM Pangaribuan",
+            "email": "yusufpangaribuan31@gmail.com"
         },
         "license": {
             "name": "Apache 2.0",
@@ -67,6 +67,44 @@ var doc = `{
                     }
                 }
             }
+        },
+        "/register": {
+            "post": {
+                "description": "Register New Customer",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Register New Customer",
+                "parameters": [
+                    {
+                        "description": "Request Body",
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/model.Customer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/model.Customer"
+                            }
+                        }
+                    }
+                }
+            }
         }
     },
     "definitions": {
@@ -80,6 +118,20 @@ var doc = `{
                     "type": "string"
                 },
                 "slug": {
+                    "type": "string"
+                }
+            }
+        },
+        "model.Customer": {
+            "type": "object",
+            "properties": {
+                "email": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "name": {
                     "type": "string"
                 }
             }

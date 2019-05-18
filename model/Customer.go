@@ -7,3 +7,7 @@ type Customer struct {
 	Password string `gorm:"column:password"`
 	Name     string `gorm:"column:name"`
 }
+
+func (Customer) TableName() string {
+	return "customer"
+}

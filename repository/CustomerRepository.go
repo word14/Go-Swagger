@@ -26,6 +26,14 @@ func FindByEmail(Email *string) *model.Customer {
 	return nil
 }
 
+func Create(Customer *model.Customer) bool {
+	err := database.DB.Create(&Customer)
+	if err != nil {
+		return false
+	}
+	return true
+}
+
 // func getID() {
 // 	conn := <-DBTemp
 // 	defer DBTemp -< conn

@@ -11,3 +11,9 @@ func Login(context *gin.Context) {
 	context.Bind(&body)
 	service.Login(&body, context)
 }
+
+func Register(context *gin.Context) {
+	var body model.RegisterRequest
+	context.Bind(&body)
+	service.Register(&body, context)
+}

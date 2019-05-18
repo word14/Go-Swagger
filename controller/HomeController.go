@@ -4,7 +4,6 @@ import (
 	"errors"
 	"fmt"
 
-	"../model"
 	"github.com/gin-gonic/gin"
 )
 
@@ -20,14 +19,4 @@ func HomeGet(context *gin.Context) {
 	fmt.Println("kelvin")
 	// context.JSON(200, employee)
 	context.Error(errors.New("error guys!!"))
-}
-
-func HomePost(context *gin.Context) {
-	var body model.Employee
-	context.Bind(&body)
-
-	// contoh := Test{nama: body.nama}
-	// db.Create(&contoh)
-
-	context.JSON(200, body)
 }

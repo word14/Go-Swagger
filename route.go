@@ -19,6 +19,7 @@ func InitRoute(app *gin.Engine) {
 		// middleware.JwtMiddleware,
 		controller.ProductSuperCategoryList)
 	app.GET("/test/:slug", middleware.JwtMiddleware, controller.ProductSuperCategoryGet)
-	app.POST("/", controller.HomePost)
+	// app.POST("/", controller.HomePost)
 	app.POST("/login", controller.Login)
+	app.POST("/register", controller.Register)
 }
