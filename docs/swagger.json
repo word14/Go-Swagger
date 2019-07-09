@@ -94,6 +94,43 @@
             }
         }
     },
+    "/customer/{email}": {
+        "get": {
+            "description": "Get Customer",
+            "consumes": [
+                "application/json"
+            ],
+            "produces": [
+                "application/json"
+            ],
+            "tags": [
+                "Customer"
+            ],
+            "summary": "Get Customer",
+            "parameters": [
+                {
+                    "description": "Request Path",
+                    "name": "email",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "Success",
+                    "schema": {
+                        "type": "object",
+                        "items": {
+                            "$ref": "#/definitions/model.Customer"
+                        }
+                    }
+                }
+            }
+        }
+    },
     "definitions": {
         "model.ProductSuperCategory": {
             "type": "object",
